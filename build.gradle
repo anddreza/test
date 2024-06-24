@@ -1,19 +1,17 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "5.0.1"
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
 
-test {
-    useJUnitPlatform()
+    testImplementation 'junit:junit:4.+'
+    testImplementation 'io.rest-assured:rest-assured:4.+'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+
 }
